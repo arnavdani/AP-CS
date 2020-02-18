@@ -1,0 +1,281 @@
+
+First: java.lang.IllegalArgumentException: Invalid side lengths
+	Correctly identified a triangle in which the longest side > sum of other two sides
+
+Second: java.lang.IllegalArgumentException: Length is not legal for a rectangle
+	Correctly identified negative sides for a rectangle
+
+Third java.lang.IllegalArgumentException: Width is not legal for a rectangle
+	Correctly identified a length of 0 for a rectangle
+
+Fourth java.lang.IllegalArgumentException: Invalid side lengths
+	Correctly identified negative sides for a triangle
+
+Fifth java.lang.IllegalArgumentException: Invalid side lengths
+	Correctly identified a length of 0
+
+Isosceles right triangle correctly processed setSideC
+
+Equilateral triangle correctly processed setSideB
+
+alex.compareTo(testObject) should return -999; it returned -999
+
+rex.compareTo(testObject) should return -999; it returned -999
+
+
+Triangle        alex    perimeter =   15.00010  area =    9.92179 
+			a =  6.00000	b =  5.00000	c =  4.00010
+			regular: false	side count = 3
+Circle          round   perimeter =   25.13274  area =   50.26548 
+			radius=   4.00000
+	alex.compareAnotherWay(round) should return a negative number; it returned -1
+
+
+Square          rex     perimeter =   28.35926  area =   50.26548 
+			width =  7.08982	length =  7.08982
+			regular: true	side count = 4
+Circle          round   perimeter =   25.13274  area =   50.26548 
+			radius=   4.00000
+	rex.compareAnotherWay(round) should return a 0; it returned 0
+
+
+
+
+
+
+
+Triangle        alex    perimeter =   15.00010  area =    9.92179 
+			a =  6.00000	b =  5.00000	c =  4.00010
+			regular: false	side count = 3
+alex      	Triangle       	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	   0		true  	   0
+  almost  	Triangle       	   0		true  	   0
+  bob     	Equilateral    	  -1		false 	  -1
+  cathy   	IsoscelesRt    	  -1		false 	  -1
+  derek   	Triangle       	  -1		false 	  -1
+  edward  	Rectangle      	-999		false 	  -1
+  fred    	Rectangle      	-999		false 	  -1
+  gail    	Rectangle      	-999		false 	  -1
+  helena  	Rectangle      	-999		false 	  -1
+  iris    	Square         	-999		false 	  -1
+  jerome  	Rectangle      	-999		false 	  -1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Triangle        almost  perimeter =   15.00011  area =    9.92182 
+			a =  6.00000	b =  5.00000	c =  4.00011
+			regular: false	side count = 3
+almost    	Triangle       	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	   0		true  	   0
+  almost  	Triangle       	   0		true  	   0
+  bob     	Equilateral    	  -1		false 	  -1
+  cathy   	IsoscelesRt    	  -1		false 	  -1
+  derek   	Triangle       	  -1		false 	  -1
+  edward  	Rectangle      	-999		false 	  -1
+  fred    	Rectangle      	-999		false 	  -1
+  gail    	Rectangle      	-999		false 	  -1
+  helena  	Rectangle      	-999		false 	  -1
+  iris    	Square         	-999		false 	  -1
+  jerome  	Rectangle      	-999		false 	  -1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Equilateral     bob     perimeter =   21.00000  area =   21.21762 
+			a =  7.00000	b =  7.00000	c =  7.00000
+			regular: true	side count = 3
+bob       	Equilateral    	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	   1		false 	   1
+  almost  	Triangle       	   1		false 	   1
+  bob     	Equilateral    	   0		true  	   0
+  cathy   	IsoscelesRt    	  -1		false 	   0
+  derek   	Triangle       	  -1		false 	   0
+  edward  	Rectangle      	-999		false 	  -1
+  fred    	Rectangle      	-999		false 	  -1
+  gail    	Rectangle      	-999		false 	  -1
+  helena  	Rectangle      	-999		false 	  -1
+  iris    	Square         	-999		false 	  -1
+  jerome  	Rectangle      	-999		false 	  -1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+IsoscelesRightTriangle cathy   perimeter =   22.24098  area =   21.21762 
+			a =  9.21252	b =  6.51423	c =  6.51423
+			regular: false	side count = 3
+cathy     	IsoscelesRightTriangle	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	   1		false 	   1
+  almost  	Triangle       	   1		false 	   1
+  bob     	Equilateral    	   1		false 	   0
+  cathy   	IsoscelesRt    	   0		true  	   0
+  derek   	Triangle       	   0		true  	   0
+  edward  	Rectangle      	-999		false 	  -1
+  fred    	Rectangle      	-999		false 	  -1
+  gail    	Rectangle      	-999		false 	  -1
+  helena  	Rectangle      	-999		false 	  -1
+  iris    	Square         	-999		false 	  -1
+  jerome  	Rectangle      	-999		false 	  -1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Triangle        derek   perimeter =   22.24099  area =   21.21762 
+			a =  9.21252	b =  6.51423	c =  6.51423
+			regular: false	side count = 3
+derek     	Triangle       	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	   1		false 	   1
+  almost  	Triangle       	   1		false 	   1
+  bob     	Equilateral    	   1		false 	   0
+  cathy   	IsoscelesRt    	   0		true  	   0
+  derek   	Triangle       	   0		true  	   0
+  edward  	Rectangle      	-999		false 	  -1
+  fred    	Rectangle      	-999		false 	  -1
+  gail    	Rectangle      	-999		false 	  -1
+  helena  	Rectangle      	-999		false 	  -1
+  iris    	Square         	-999		false 	  -1
+  jerome  	Rectangle      	-999		false 	  -1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Rectangle       edward  perimeter =   21.60000  area =   28.35000 
+			width =  4.50000	length =  6.30000
+			regular: false	side count = 4
+edward    	Rectangle      	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	   0		true  	   0
+  fred    	Rectangle      	   1		false 	   0
+  gail    	Rectangle      	   0		true  	   0
+  helena  	Rectangle      	  -1		false 	  -1
+  iris    	Square         	   1		false 	   1
+  jerome  	Rectangle      	   1		false 	   1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Rectangle       fred    perimeter =   21.60000  area =   28.35000 
+			width =  6.30000	length =  4.50000
+			regular: false	side count = 4
+fred      	Rectangle      	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	  -1		false 	   0
+  fred    	Rectangle      	   0		true  	   0
+  gail    	Rectangle      	  -1		false 	   0
+  helena  	Rectangle      	  -1		false 	  -1
+  iris    	Square         	  -1		false 	   1
+  jerome  	Rectangle      	  -1		false 	   1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Rectangle       gail    perimeter =   21.60000  area =   28.35000 
+			width =  4.50000	length =  6.30000
+			regular: false	side count = 4
+gail      	Rectangle      	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	   0		true  	   0
+  fred    	Rectangle      	   1		false 	   0
+  gail    	Rectangle      	   0		true  	   0
+  helena  	Rectangle      	  -1		false 	  -1
+  iris    	Square         	   1		false 	   1
+  jerome  	Rectangle      	   1		false 	   1
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Rectangle       helena  perimeter =   56.71852  area =  201.06191 
+			width = 14.17963	length = 14.17963
+			regular: true	side count = 4
+helena    	Rectangle      	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	   1		false 	   1
+  fred    	Rectangle      	   1		false 	   1
+  gail    	Rectangle      	   1		false 	   1
+  helena  	Rectangle      	   0		true  	   0
+  iris    	Square         	   1		false 	   1
+  jerome  	Rectangle      	   1		false 	   1
+  kate    	Circle         	-999		false 	   0
+
+
+
+
+Square          iris    perimeter =   20.31082  area =   25.78310 
+			width =  5.07771	length =  5.07771
+			regular: true	side count = 4
+iris      	Square         	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	  -1		false 	  -1
+  fred    	Rectangle      	   1		false 	  -1
+  gail    	Rectangle      	  -1		false 	  -1
+  helena  	Rectangle      	  -1		false 	  -1
+  iris    	Square         	   0		true  	   0
+  jerome  	Rectangle      	   1		false 	   0
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Rectangle       jerome  perimeter =   20.31330  area =   25.78325 
+			width =  5.15665	length =  5.00000
+			regular: false	side count = 4
+jerome    	Rectangle      	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	  -1		false 	  -1
+  fred    	Rectangle      	   1		false 	  -1
+  gail    	Rectangle      	  -1		false 	  -1
+  helena  	Rectangle      	  -1		false 	  -1
+  iris    	Square         	  -1		false 	   0
+  jerome  	Rectangle      	   0		true  	   0
+  kate    	Circle         	-999		false 	  -1
+
+
+
+
+Circle          kate    perimeter =   50.26548  area =  201.06193 
+			radius=   8.00000
+kate      	Circle         	.compareTo	.equals  .compareAnotherWay
+  alex    	Triangle       	-999		false 	   1
+  almost  	Triangle       	-999		false 	   1
+  bob     	Equilateral    	-999		false 	   1
+  cathy   	IsoscelesRt    	-999		false 	   1
+  derek   	Triangle       	-999		false 	   1
+  edward  	Rectangle      	-999		false 	   1
+  fred    	Rectangle      	-999		false 	   1
+  gail    	Rectangle      	-999		false 	   1
+  helena  	Rectangle      	-999		false 	   0
+  iris    	Square         	-999		false 	   1
+  jerome  	Rectangle      	-999		false 	   1
+  kate    	Circle         	   0		true  	   0
