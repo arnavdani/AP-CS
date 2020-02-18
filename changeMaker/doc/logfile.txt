@@ -1,0 +1,53 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\HarkerCS\GridWorldCaseStudy\GridWorldCodeBlueJ\gridworld.jar;C:\HarkerCS\KarelJRobot.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\arnav\Desktop\Programming Projects\ChangeMaker
+-d
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_40
+Building tree for all the packages and classes...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\ChangeMaker.html...
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:112: warning - @precondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:112: warning - @postcondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:151: warning - @precondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:151: warning - @postcondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:54: warning - @precondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:54: warning - @postcondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:32: warning - @postcondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:192: warning - @precondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:192: warning - @postcondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:172: warning - @precondition is an unknown tag.
+C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\ChangeMaker.java:172: warning - @postcondition is an unknown tag.
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\package-frame.html...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\package-summary.html...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\allclasses-frame.html...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\allclasses-noframe.html...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\index.html...
+Generating C:\Users\arnav\Desktop\Programming Projects\ChangeMaker\doc\stylesheet.css...
+11 warnings
