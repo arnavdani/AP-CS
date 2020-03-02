@@ -271,11 +271,43 @@ public class HurricaneOrganizerArrayArnav
     }  
 
     /**
-     * Sorts descending based upon pressures using a non-recursive merge sort.
+     * Sorts descending based upon pressures 
+     * using a non-recursive merge sort.
      */
     public void sortPressures()
     {
-        // write this code
+        int len = hurricanes.length;
+        int mid = len / 2;
+        sortPressuresHelper(0, mid);
+        sortPressuresHelper(mid, len);
+        Hurricane[] merged = new Hurricane[len];
+        int findex = 0;
+        int sindex = mid;
+        for (int index = 0; index < len; index++)
+        {
+            if (findex >= mid)
+            {
+                merged[index] = hurricanes[sindex];
+                sindex++;
+            }
+            else if (sindex >= len)
+            {
+                merged[index] = hurricanes[findex];
+                findex++;
+            }
+            else if (hurricanes[findex].comparePressureTo(
+                hurricanes[sindex]) > 0)
+            {
+                merged[index] = hurricanes[findex];
+                findex++;
+            }
+            else
+            {
+                merged[index] = hurricanes[sindex];
+                sindex++;
+            }
+        }
+        hurricanes = merged;
     }
 
     /**
@@ -288,7 +320,18 @@ public class HurricaneOrganizerArrayArnav
      */
     private void sortPressuresHelper (int start, int end)
     {
-        // write this code
+        for (int outer = start; outer < end - 1; outer++)
+        {
+            int mindex = outer;
+            for (int inner = outer + 1; inner < end; inner++)
+            {
+                if (hurricanes[mindex].comparePressureTo(hurricanes[inner]) < 0)
+                    mindex = inner;
+            }
+            Hurricane temp = hurricanes[outer];
+            hurricanes[outer] = hurricanes[mindex];
+            hurricanes[mindex] = temp;
+        }
     }
 
     /**
@@ -296,9 +339,14 @@ public class HurricaneOrganizerArrayArnav
      * @param   low low
      * @param   high high
      */
-    public void sortWindSpeeds(int low, int high)
+    public void sortWindSpeeds(int low, int high /*both inclusive*/)
     {
-        // write this code
+        if (high == low)
+            return;
+        int mid = (high + low) / 2;
+        sortWindSpeeds(low, mid);
+        sortWindSpeeds(mid + 1, high);
+        mergeWindSpeedsSortHelper(low, mid + 1, high);
     }
 
     /**
@@ -315,9 +363,41 @@ public class HurricaneOrganizerArrayArnav
      * @param high  the ending index of the second part of the array.  
      *              This index is included in the merge.
      */
-    private void mergeWindSpeedsSortHelper(int low, int mid, int high)
+    private void mergeWindSpeedsSortHelper(int low, int mid, int high
+    /* both inclusive */)
     {
-        // write this code
+        Hurricane[] merge = new Hurricane[high - low + 1];
+        int findex = low;
+        int sindex = mid;
+        for (int index = 0; index < merge.length; index++)
+        {
+            if (findex >= mid)
+            {
+                merge[index] = hurricanes[sindex];
+                sindex++;
+            }
+            else if (sindex > high)
+            {
+                merge[index] = hurricanes[findex];
+                findex++;
+            }
+            else if (hurricanes[findex].compareSpeedTo(hurricanes[sindex]) < 0)
+            {
+                merge[index] = hurricanes[findex];
+                findex++;
+            }
+            else
+            {
+                merge[index] = hurricanes[sindex];
+                sindex++;
+            }
+        }
+
+        for (int index = 0; index < merge.length; index++)
+        {
+            hurricanes[index + low] = merge[index];
+        }
+
     }
 
     /**
@@ -331,11 +411,25 @@ public class HurricaneOrganizerArrayArnav
     public Hurricane [] searchYear(int year)
     {
         int counter = 0;
-        //Find []h length
-        // write this code
-
+        int len = hurricanes.length;
+        for (int i = 0; i < len; i++)
+        {
+            if (hurricanes[i].getYear() == year)
+            {
+                counter++;
+            }
+        }
         Hurricane[] h = new Hurricane[counter];
-        // write the code
+
+        counter = 0;
+        for (int i = 0; i < len; i++)
+        {
+            if (hurricanes[i].getYear() == year)
+            {
+                h[counter] = hurricanes[i];
+                counter++;
+            }
+        }
         return h;
     }     
 
@@ -367,19 +461,29 @@ public class HurricaneOrganizerArrayArnav
      *          Returns null if there are no matches
      */
     private Hurricane[ ] searchHurricaneNameHelper(String name, 
-                                        int low , int high)
+    int low , int high /* both inclusive */)
     {
-        // Test for the base case when a match is not found
-        return null;
+        if (low == high)
+        {
+            if (hurricanes[low].getName().equals(name))
+            {
+                Hurricane[] first = new Hurricane[1];
+                first[0] = hurricanes[low];
+                return first;
+            }
+            return null;
+        }
+        int mid = (low + high) / 2;
+        int compare = hurricanes[mid].getName().compareTo(name);
+        if (compare == 0)
+            return retrieveMatchedNames(name, mid);
 
-        // Test for match
+        if (compare > 0)
+        {
+            return searchHurricaneNameHelper(name, low, mid - 1);
+        }
 
-        // Determine if the potential match is in the 
-        // "first half" of the considered items in the array
-
-        // The potential match must be in the
-        // "second half" of the considered items in the array
-
+        return searchHurricaneNameHelper(name, mid + 1, high);
     }
 
     /**
@@ -395,17 +499,32 @@ public class HurricaneOrganizerArrayArnav
      */
     private Hurricane[ ] retrieveMatchedNames (String name, int index)
     {
-        // Find the start where the matches start:
+        int findex = index - 1;
+        while (findex >= 0 && hurricanes[findex].getName().equals(name))
+        {
+            findex--;
+        }
+        findex++;
 
-        // Find the end of the matches:
+        int lindex = index + 1;
+        while (lindex < hurricanes.length && 
+            hurricanes[lindex].getName().equals(name))
+        {
+            lindex++;
+        }
+        lindex--;
 
-        // Copy the objects whose names match:
+        Hurricane[] match = new Hurricane[lindex - findex + 1];
+        for (int i = 0; i < match.length; i++)
+            match[i] = hurricanes[i + findex];
 
-        return null;  // correct this line
+        return match;
+
     }
 
     /**
-     * Comment this method even though you did not write it.
+     * Generates the header to define value to 
+     *      each of the columns of data printed
      */
     public void printHeader()
     {
@@ -415,7 +534,8 @@ public class HurricaneOrganizerArrayArnav
     }
 
     /**
-     * Comment this method even though you did not write it.
+     * calls the overloaded printHurricanes method to print
+     *      every term in the arary
      */
     public void printHurricanes()
     {
@@ -423,12 +543,12 @@ public class HurricaneOrganizerArrayArnav
     }
 
     /**
-     * Add comments here even though you did not write the method.
+     * Prints the array using a for:each loop
      * @param hurs hurs
      */
     public void printHurricanes(Hurricane [] hurs)
     {
-        if (hurs.length == 0)
+        if ( hurs == null || hurs.length == 0 )
         {
             System.out.println("\nVoid of hurricane data.");
             return;
@@ -441,7 +561,8 @@ public class HurricaneOrganizerArrayArnav
     }
 
     /**
-     * Add comments here even though you did not write the method.
+     * Generates the menu in the scanner for the 
+     *  user to decide what he/she wants to do
      */
     public void printMenu()
     {
@@ -460,7 +581,8 @@ public class HurricaneOrganizerArrayArnav
     }
 
     /**
-     * Add comments here even though you did not write the method.
+     * Prints various max and min values using 
+     * methods made to calcuate the values
      */
     public void printMaxAndMin( )
     {
@@ -475,7 +597,8 @@ public class HurricaneOrganizerArrayArnav
     }
 
     /**
-     * Add comments here even though you did not write the method.
+     * Prints the average of multiple stats using 
+     *  the methods made to calcuate averages
      */
     public void printAverages( )
     {
@@ -489,11 +612,11 @@ public class HurricaneOrganizerArrayArnav
 
     /**
      * 
-     * Add comments here even though you did not write the method.
+     * Decides how to act based on the user input taken from the scanner
      *
      * @return done when done
      */
-    
+
     public boolean interactWithUser( )
     {
         Scanner in = new Scanner(System.in);
@@ -570,7 +693,7 @@ public class HurricaneOrganizerArrayArnav
     public static void main (String [] args) throws IOException
     {
         HurricaneOrganizerArrayArnav cane = new 
-                    HurricaneOrganizerArrayArnav("hurricanedata.txt");
+            HurricaneOrganizerArrayArnav("hurricanedata.txt");
         boolean areWeDoneYet = false;
         while ( !areWeDoneYet)
         {
